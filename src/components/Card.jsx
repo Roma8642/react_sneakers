@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const Card = (props) => {
+    const [isAdd, setIsAdd]=useState(false)
+    const [isLike, setIsLike]=useState(false)
+    function setAdd(){
+        setIsAdd(!isAdd)
+    }function setLike(){
+        setIsLike(!isLike)
+    }
     return (
         <div className="card">
             <div className="favorite">
-                <img src="/img/unlike.svg" /*onClick={}*/ alt="unliked"/>
+                <img width={25} height={25} src={isLike?"/img/like.svg":"/img/unlike.svg"} onClick={setLike} alt="unliked"/>
             </div>
             <img width={133} height={112} src={props.imgUrl} alt="sneakers"/>
             <h5>{props.title}</h5>
@@ -13,9 +20,9 @@ const Card = (props) => {
                     <span>Цена</span>
                     <b>{props.price}</b>
                 </div>
-                <button className="button">
-                    <img width={11} height={11} /*onClick={}*/ src="/img/plusBtn.svg" alt="sneakers"/>
-                </button>
+
+                    <img className="cu-p" width={32} height={32} onClick={setAdd} src={isAdd?"/img/tick.svg":"/img/plusBtn.svg"} alt="sneakers"/>
+
             </div>
         </div>
     );

@@ -40,8 +40,6 @@ function App() {
             title={obj.title}
             price={obj.price}
             imgUrl={obj.imgUrl}
-            //onLike={}
-           // onPlus={}
         />
     ))}
 </div>
