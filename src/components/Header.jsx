@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const Header = ({cartSum =12005}) => {
+const Header = (props) => {
+
     return (
         <header className="d-flex justify-between align-center">
             <div className="d-flex align-center">
@@ -11,7 +12,7 @@ const Header = ({cartSum =12005}) => {
                 </div>
             </div>
             <ul className="d-flex">
-                <li className="mr-30"> <img src ="/img/cart.svg" alt="logo"/><span>{cartSum} руб.</span></li>
+                <li onClick={props.onClickCart} className="mr-30 cu-p"> <img src ="/img/cart.svg" alt="logo"/><span>12005 руб.</span></li>
                 <li>
                     <img src ="/img/user.svg" alt="logo"/>
                 </li>
