@@ -1,8 +1,9 @@
 import React from 'react';
 
+
 const Drawer = () => {
     return (
-        <div style={{display:"none"}} className="overlay">
+        <div style={{display:"none"}}  className="overlay">
         <div className="drawer">
             <h2 className="mb-40 d-flex justify-between ">Корзина     <img className="removeBtn cu-p" src="/img/remove.svg" alt="remove"/></h2>
 
@@ -16,6 +17,7 @@ const Drawer = () => {
                     </div>
                     <img className="removeBtn" src="/img/remove.svg" alt="remove"/>
                 </div>
+                {/*<Card/>*/}
             </div>
             <div className="cartTotalBlock">
                 <ul>

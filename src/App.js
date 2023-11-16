@@ -18,7 +18,7 @@ const crossList=[{
 },{
     title:'Мужские Кроссовки Nike Blazer Mid Suede',
     price:8499,
-    imgUrl:'/img/sneakers/image 3.jpg'
+    imgUrl:'/img/sneakers/image 4.jpg'
 },
 ]
 function App() {
@@ -36,7 +36,13 @@ function App() {
 
 <div className="d-flex">
     {crossList.map((obj)=>(
-        <Card title={obj.title} price={obj.price} imgUrl={obj.imgUrl}/>
+        <Card
+            title={obj.title}
+            price={obj.price}
+            imgUrl={obj.imgUrl}
+            //onLike={}
+           // onPlus={}
+        />
     ))}
 </div>
       </div>
