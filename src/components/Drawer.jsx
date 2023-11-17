@@ -1,23 +1,28 @@
 import React from 'react';
 
 
-const Drawer = (props) => {
+const Drawer = ({items =[],onClose}) => {
     return (
         <div className="overlay">
         <div className="drawer">
-            <h2 className="mb-40 d-flex justify-between ">Корзина<img onClick={props.onClose} className="removeBtn cu-p" src="/img/remove.svg" alt="remove"/></h2>
+            <h2 className="mb-40 d-flex justify-between ">Корзина<img onClick={onClose} className="removeBtn cu-p" src="/img/remove.svg" alt="remove"/></h2>
 
 
             <div className="items">
-                <div className="cartItem mb-20 d-flex align-center">
-                    <div style={{backgroundImage:'url(/img/sneakers/image%207.jpg)'}} className="cartItemImg"></div>
-                    <div className="mr-20 flex">
-                        <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
-                        <b>12 999 руб.</b>
+                {items.map((obj)=>(
+                    <div className="cartItem mb-20 d-flex align-center">
+                        <div className="cartItemImg">
+<img width={70} height={70} src={obj.imgUrl} alt=""/>
+                        </div>
+                        <div className="mr-20 flex">
+                            <p className="mb-5">{obj.title}
+                            </p>
+                            <b>{obj.price} руб.</b>
+                        </div>
+                        <img className="removeBtn" src="/img/remove.svg" alt="remove"/>
                     </div>
-                    <img className="removeBtn" src="/img/remove.svg" alt="remove"/>
-                </div>
-                {/*<Card/>*/}
+
+                ))}
             </div>
             <div className="cartTotalBlock">
                 <ul>
